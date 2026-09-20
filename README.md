@@ -11,49 +11,27 @@
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 
 ## 📖 Overview
+This project is a complete RESTful Web Service built using Spring Boot. It implements a full CRUD (Create, Read, Update, Delete) API for managing a "Todo" resource, utilizing Spring Data JPA for database interaction and an H2 in-memory database for rapid testing.
 
-This project is a CRUD REST API developed as part of the **CSS37W2 - Microservices Lab**.
+The application follows a standard Layered Architecture:
+- **Model Layer:** Entities and Enums (`Todo`, `TodoStatus`).
+- **Repository Layer:** Spring Data JPA interfaces (`TodoRepository`).
+- **Service Layer:** Business logic (`TodoService`, `TodoServiceImpl`).
+- **Controller Layer:** REST endpoints (`TodoController`).
+- **Bootstrap Layer:** Initial data loader (`TodoLoader`).
 
-The application is built using **Spring Boot** and provides a RESTful web service for managing a `Todo` resource. It demonstrates how a backend server can communicate with clients such as Postman, web applications, and mobile applications through REST endpoints.
+## 🚀 Features & Endpoints
 
-The project implements the four main CRUD operations:
+| Operation | HTTP Verb | Endpoint | Request Body | Status Code |
+| :--- | :--- | :--- | :--- | :--- |
+| Create | POST | `/api/v1/todo` | JSON (title, description, status) | 201 Created |
+| Read (All) | GET | `/api/v1/todo` | None | 200 OK |
+| Read (by ID) | GET | `/api/v1/todo/{todoId}` | None | 200 OK |
+| Update | PUT | `/api/v1/todo/{todoId}` | JSON (updated fields) | 200 OK |
+| Delete | DELETE | `/api/v1/todo/{todoId}` | None | 204 No Content |
 
-- **Create**
-- **Read**
-- **Update**
-- **Delete**
+## 🛠️ How to Run the Application
 
-## 🎯 Objectives
-
-The main objectives of this lab are to:
-
-- Understand REST API fundamentals
-- Create a Spring Boot application
-- Configure an H2 database
-- Use Spring Data JPA for database interaction
-- Create an entity using JPA
-- Implement a repository
-- Implement a service layer
-- Create REST controllers
-- Handle HTTP requests and responses
-- Test CRUD endpoints using Postman
-
-## 🏗️ Architecture
-
-The application follows a layered architecture:
-
-```text
-Client
-   │
-   │ HTTP Request
-   ▼
-Controller Layer
-   │
-   ▼
-Service Layer
-   │
-   ▼
-Repository Layer
-   │
-   ▼
-H2 Database
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Thabiso0503/CSS37W2-Lab2-CRUD-REST-API.git
